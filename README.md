@@ -23,32 +23,23 @@ Key components:
 
 1. Clone this repository
 2. Navigate to the project directory
-3. Build the Docker image:
+3. Build and run the Docker image:
 
 ```bash
 docker build -t hadoop-on-centos7 .
-```
 
-Run the container with the following command to expose all necessary ports:
-
-```bash
 docker run -it --name hadoop-cluster -p 50070:50070 -p 50075:50075 -p 8088:8088 -p 8042:8042 -p hadoop-on-centos7
 ```
 
-Alternatively, if you want to pull the official image of this repository:
+Alternatively, if you want to pull the official image of this repository (not pushed yet):
 
 ```bash
 docker pull yassermessahli/hadoop-on-centos7:estin
-```
-
-Then run the container with the following command to expose all necessary ports:
-
-```bash
 
 docker run -it --name hadoop -p 50070:50070 -p 50075:50075 -p 8088:8088 -p 8042:8042 -p 19888:19888 -p 22:22 hadoop-on-centos7
 ```
 
-## Port Explanations
+## Explanations
 
 The container exposes several ports for different Hadoop services:
 
