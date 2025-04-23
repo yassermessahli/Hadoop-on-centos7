@@ -28,11 +28,9 @@ ${HADOOP_HOME}/sbin/start-dfs.sh
 ${HADOOP_HOME}/sbin/start-yarn.sh
 
 echo "$(date): Hadoop started successfully on CentOS instance!"
+echo ""
 echo "-------------------------------------------------------------"
-echo "You are now in an interactive terminal with root access."
-echo "You can modify Hadoop configurations in /opt/hadoop/etc/hadoop/"
-echo "HDFS web UI: http://localhost:50070"
-echo "YARN web UI: http://localhost:8088"
+echo "Cent os 7 terminal started with root access."
 echo "Type 'exit' to stop the container."
 echo "-------------------------------------------------------------"
 
