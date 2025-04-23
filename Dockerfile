@@ -39,7 +39,7 @@ COPY config/*.xml /opt/hadoop/etc/hadoop/
 RUN /opt/hadoop/bin/hdfs namenode -format -force
 
 # Expose ports
-EXPOSE 50070 8088 8042 22
+EXPOSE 50070 50075 8088 8042 19888 22
 
 # Add entrypoint script to root
 COPY entrypoint.sh /entrypoint.sh
