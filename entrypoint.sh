@@ -30,8 +30,8 @@ ${HADOOP_HOME}/sbin/start-yarn.sh
 echo "$(date): Hadoop started successfully on CentOS instance!"
 echo ""
 echo "-------------------------------------------------------------"
-echo "Cent os 7 terminal started with root access."
-echo "Type 'exit' to stop the container."
+echo "Cent os 7 terminal runnning with root access."
+echo "Type 'exit' to stop the container..."
 echo "-------------------------------------------------------------"
 
 # Keep container alive or provide interactive shell
