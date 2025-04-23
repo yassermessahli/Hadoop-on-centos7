@@ -8,3 +8,7 @@
 .git
 .gitignore
 
+# readme file
+README.md
+
+DOckerfile
