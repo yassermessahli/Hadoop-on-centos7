@@ -23,11 +23,11 @@
   </property>
   <property>
     <name>dfs.name.dir</name>
-    <value>file:${HADOOP_HOME}/hadoopdata/namenode</value>
+    <value>file:/opt/hadoop/hadoopdata/namenode</value>
   </property>
   <property>
     <name>dfs.data.dir</name>
-    <value>file:${HADOOP_HOME}/hadoopdata/datanode</value>
+    <value>file:/opt/hadoop/hadoopdata/datanode</value>
   </property>
   <property>
     <name>dfs.namenode.http-address</name>
