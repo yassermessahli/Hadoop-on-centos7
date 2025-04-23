@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
+# Start the SSH daemon to allow remote connections (required for Hadoop)
 echo "Starting SSH..."
 /usr/sbin/sshd
 
-# ensure ENV VARS are seen by remote SSH sessions
+# Ensure all required environment variables are available in SSH sessions for Hadoop commands
 cat <<EOF >> /root/.bashrc
-export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk \
 export HADOOP_HOME=/opt/hadoop \
 export HADOOP_INSTALL=/opt/hadoop \
 export HADOOP_MAPRED_HOME=/opt/hadoop \
