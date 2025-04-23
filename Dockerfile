@@ -39,9 +39,9 @@ ENV HADOOP_INSTALL=/opt/hadoop \
 RUN mkdir -p ${HADOOP_HOME}/hadoopdata/namenode ${HADOOP_HOME}/hadoopdata/datanode
 COPY config/*.xml ${HADOOP_HOME}/etc/hadoop/
 
-# Add entrypoint script
-COPY entrypoint.sh /opt/hadoop/entrypoint.sh
-RUN chmod +x /opt/hadoop/entrypoint.sh
+# Add entrypoint script to root
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # Expose ports
 EXPOSE 50070 8088 8042 22
@@ -50,4 +50,4 @@ EXPOSE 50070 8088 8042 22
 RUN ${HADOOP_HOME}/bin/hdfs namenode -format -force
 
 # Use the entrypoint script to start services
-ENTRYPOINT ["/opt/hadoop/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

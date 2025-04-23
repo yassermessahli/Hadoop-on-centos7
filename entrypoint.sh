@@ -7,5 +7,7 @@ echo "Starting HDFS & YARN..."
 ${HADOOP_HOME}/sbin/start-dfs.sh
 ${HADOOP_HOME}/sbin/start-yarn.sh
 
+echo "Hadoop started successfully!"
+
 # Keep container alive
-tail -f /dev/null
+# tail -f /dev/null

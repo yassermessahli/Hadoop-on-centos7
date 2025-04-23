@@ -3,3 +3,8 @@
 
 *.tar.gz
 *.log
+
+# git files
+.git
+.gitignore
+
