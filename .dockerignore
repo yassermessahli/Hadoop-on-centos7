@@ -1,0 +1,5 @@
+# Ignore the following files and directories
+# to keep the Docker image clean and small
+
+*.tar.gz
+*.log
