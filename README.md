@@ -12,15 +12,19 @@ Key components:
 - **MapReduce**: Programming model for large-scale data processing
 - **SSH**: Configured for passwordless access required by Hadoop services
 
-## Building and Running
+## run the container
+the easiest way to run the container is to pull the official image of this repository just run this command:
 
-### Prerequisites
+```bash
+docker pull yassermessahli/hadoop-on-centos7:estin
+docker run -it --name hadoop-cluster -p 50070:50070 -p 50075:50075 -p 8088:8088 -p 8042:8042 yassermessahli/hadoop-on-centos7:estin
+```
 
+you will need:
 - Docker installed on your system
 - Internet connection for pulling base images and dependencies
 
-### Build Instructions
-
+alteratively , you can buil it yourself. follow these steps:
 1. Clone this repository
 2. Navigate to the project directory
 3. Build and run the Docker image:
@@ -30,15 +34,7 @@ docker build -t hadoop-on-centos7 .
 docker run -it --name hadoop-cluster -p 50070:50070 -p 50075:50075 -p 8088:8088 -p 8042:8042 hadoop-on-centos7
 ```
 
-Alternatively, if you want to pull the official image of this repository just run this command:
-
-```bash
-docker pull yassermessahli/hadoop-on-centos7:estin
-docker run -it --name hadoop-cluster -p 50070:50070 -p 50075:50075 -p 8088:8088 -p 8042:8042 yassermessahli/hadoop-on-centos7:estin
-```
-
-## Explanations
-
+To test it. Access web interfaces by navigating to `http://localhost:<port>` in your browser.
 The container exposes several ports for different Hadoop services:
 
 | Port  | Service                      | Description                                          |
@@ -50,9 +46,8 @@ The container exposes several ports for different Hadoop services:
 | 19888 | MapReduce Job History Server | View completed MapReduce jobs and their statistics   |
 | 22    | SSH                          | SSH access to the container                          |
 
-Access web interfaces by navigating to `http://localhost:<port>` in your browser.
 
-## Configuration Files
+## Additionals: configuration Files
 
 All Hadoop configuration files are located in `/opt/hadoop/etc/hadoop/` within the container:
 
