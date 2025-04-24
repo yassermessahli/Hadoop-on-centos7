@@ -2,7 +2,7 @@ FROM eurolinux/centos-7:latest
 
 # Install all required dependencies for Hadoop and SSH functionality
 RUN yum update -y && \
-    yum install -y java-1.8.0-openjdk-devel openssh-server openssh-clients wget tar vim && \
+    yum install -y java-1.8.0-openjdk-devel openssh-server openssh-clients wget tar vim dos2unix && \
     yum clean all
 
 # Download the specified Hadoop version and extract it to /opt
@@ -43,7 +43,7 @@ EXPOSE 50070 50075 8088 8042
 
 # Add entrypoint script to root
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN dos2unix /entrypoint.sh && chmod +x /entrypoint.sh
 
 # Use the entrypoint script to start services
 ENTRYPOINT ["/entrypoint.sh"]
