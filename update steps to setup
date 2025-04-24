@@ -27,16 +27,14 @@ Key components:
 
 ```bash
 docker build -t hadoop-on-centos7 .
-
-docker run -it --name hadoop-cluster -p 50070:50070 -p 50075:50075 -p 8088:8088 -p 8042:8042 -p hadoop-on-centos7
+docker run -it --name hadoop-cluster -p 50070:50070 -p 50075:50075 -p 8088:8088 -p 8042:8042 hadoop-on-centos7
 ```
 
-Alternatively, if you want to pull the official image of this repository (not pushed yet):
+Alternatively, if you want to pull the official image of this repository just run this command:
 
 ```bash
 docker pull yassermessahli/hadoop-on-centos7:estin
-
-docker run -it --name hadoop -p 50070:50070 -p 50075:50075 -p 8088:8088 -p 8042:8042 -p 19888:19888 -p 22:22 hadoop-on-centos7
+docker run -it --name hadoop-cluster -p 50070:50070 -p 50075:50075 -p 8088:8088 -p 8042:8042 yassermessahli/hadoop-on-centos7:estin
 ```
 
 ## Explanations
